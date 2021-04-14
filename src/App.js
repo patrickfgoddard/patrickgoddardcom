@@ -12,8 +12,12 @@ import {
 } from "./pages";
 
 function App() {
+  let basename = '/';
+  if (process.env.NODE_ENV === 'production') {
+    basename = '/patrickgoddardcom';
+  }
   return (
-    <Router>
+    <Router basename={basename}>
       <div>
         <Helmet>
           <meta charSet="utf-8" />

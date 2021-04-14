@@ -1,8 +1,8 @@
 import React from "react";
 import {
-  Link, 
-  useLocation,
-  Outlet
+  Link,
+  useRouteMatch,
+  useParams
 } from "react-router-dom";
 
 export function Home() {
@@ -12,11 +12,10 @@ export function Home() {
         <h1>Patrick Goddard</h1>
         <h2>Musician</h2>
       </header>
-      <nav>
-        <Link to="insta-bio-links">Insta Bio Links</Link>
-        <span> | </span>
-        <Link to="i-hate-the-moon">New Single - I Hate The Moon</Link>
-      </nav>
+      <ul>
+        <li><Link to="/insta-bio-links">Insta Bio Links</Link></li>
+        <li><Link to="/i-hate-the-moon">New Single - I Hate The Moon</Link></li>
+      </ul>
     </div>
   )
 }
