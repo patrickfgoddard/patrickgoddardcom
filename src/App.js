@@ -1,24 +1,37 @@
-import logo from './logo.svg';
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import {Helmet} from "react-helmet";
+import {
+  Home,
+  InstaBioLinks,
+  IhmLinks
+} from "./pages";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Helmet>
+          <meta charSet="utf-8" />
+          <title>Patrick Goddard</title>
+        </Helmet>
+        <Switch>
+          <Route path="/insta-bio-links">
+            <InstaBioLinks />
+          </Route>
+          <Route path="/i-hate-the-moon">
+            <IhmLinks />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router> 
   );
 }
 
