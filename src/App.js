@@ -2,6 +2,7 @@ import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
+  HashRouter,
   Route
 } from "react-router-dom";
 import {Helmet} from "react-helmet";
@@ -23,17 +24,17 @@ function App() {
           <meta charSet="utf-8" />
           <title>Patrick Goddard</title>
         </Helmet>
-        <Switch>
+        <HashRouter>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route path="/insta-bio-links">
             <InstaBioLinks />
           </Route>
           <Route path="/i-hate-the-moon">
             <IhmLinks />
           </Route>
-          <Route path="/">
-            <Home />
-          </Route>
-        </Switch>
+        </HashRouter>
       </div>
     </Router> 
   );
